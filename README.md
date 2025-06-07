@@ -37,19 +37,72 @@ Diff = A ⊕ B ⊕ Bin
 Borrow out = A'Bin + A'B + BBin
 
 **Truthtable**
+FULL ADDER
 
-**Procedure**
+![389268000-515e464d-2b44-4b1a-a8eb-67961cb2b70d](https://github.com/user-attachments/assets/7ef6f0f9-604a-4036-8285-541ecf6d8aa1)
+
+FULL SUBTRACTOR
+
+![389268010-d9f2bb69-c371-4be6-9da9-19fd7c60ac6e](https://github.com/user-attachments/assets/8f3ac60e-7557-4df0-adc3-d2313bade212)
+
+Procedure
 
 Write the detailed procedure here
 
+1).Type the program in Quartus software.
+
+2).Compile and run the program.
+
+3).Generate the RTL schematic and save the logic diagram.
+
+4).Create nodes for inputs and outputs to generate the timing diagram.
+
+5).For different input combinations generate the timing diagram
+
 **Program:**
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+```
 
-**RTL Schematic**
+i)FULL ADDER
 
-**Output Timing Waveform**
+module fulladder(a,b,cin,sum,carry);
+input a,b,cin;
+output sum,carry;
+assign sum=( (a ^ b)^cin);
+assign carry= ( (a & b)| ( cin &(a ^ b )));
+endmodule
+
+ii)FULL SUBTRACTOR
+
+module fullsubtractor(a,b,bin,difference,borrow);
+input a,b,bin;![391884214-515eaa7b-11ed-4243-9cbf-20bf5ae296e0](https://github.com/user-attachments/assets/e617daaa-fb32-4222-afd0-a0a212230629)
+
+output difference,borrow;
+assign difference= ( (a ^ b)^bin);
+assign borrow= ( ( ~a & b)| ( bin & (~(a ^ b ))));
+endmodule
+
+
+```
+RTL Schematic
+
+FULL ADDER
+
+![391884026-5dc82452-1baa-4caa-880f-03b173e70865](https://github.com/user-attachments/assets/5e34c0f2-7d8a-4523-88db-a1d23cc7b1c8)
+
+FULL SUBTRACTOR
+
+![391884105-3a9b8ee0-0370-45ee-bba7-9616c4554746](https://github.com/user-attachments/assets/cb88f774-6104-41dd-9df9-0f037adc1355)
+
+Output Timing Waveform
+
+FULL ADDER
+
+![391884214-515eaa7b-11ed-4243-9cbf-20bf5ae296e0](https://github.com/user-attachments/assets/62decf7e-5485-42df-aa2f-1dcae732e374)
+
+FULL SUBTRACTOR
+
+![391884279-da805de2-28f1-4641-aefe-cff2d51ac340](https://github.com/user-attachments/assets/0d841c16-7b39-4591-b29f-ecf043aac1d8)
 
 **Result:**
 
